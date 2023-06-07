@@ -124,4 +124,8 @@ class menu:
         oled.show()
     def add(self):
         if(self.nb+1==len(self.e)):
+            self.nb=0
+        else:
+            self.nb+=1
             pass
+        

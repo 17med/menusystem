@@ -38,7 +38,15 @@ class element:
         color = 1  # 1 for white, 0 for black
         oled.fill_rect(x, y, width, height, color)
         oled.text(self.titlestr(self.text), 1, 5,0)
-    
+    def notitle(self):
+        for y in range(6):
+            oled.pixel(61-y, 0+y, 1)
+            oled.pixel(61+y, 0+y, 1)
+        
+
+        for j in range(3):
+            for y in range(4,13):
+                oled.pixel(60+j, y, 1)
     def active(self,nb):
 
         x = 0
@@ -111,7 +119,8 @@ class menu:
         oled.fill(0)
         if(self.nb<2):
             self.title.title()
-        
+        else:
+            self.title.notitle()
         if(self.nb%2==0):
             self.e[self.nb].active(0)
             if(len(self.e)>self.nb+1):

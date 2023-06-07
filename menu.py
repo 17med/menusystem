@@ -15,7 +15,7 @@ class element:
             
         x=x//2
         
-        print(" "*x+t+" "*x)
+        
         return " "*x+t+" "*x
     def title(self):
         x = 0
@@ -42,9 +42,9 @@ class element:
     def active(self,nb):
 
         x = 0
-        y = 21+(nb*23)
-        width = 100
-        height = 20
+        y = 21+(nb*20)
+        width = 102
+        height = 23
         color = 1
         radius = 2
         oled.fill_rect(x + radius, y, width - (2 * radius), height, color)
@@ -55,12 +55,12 @@ class element:
         self.draw_circle(x + radius, y + height - radius - 1, radius, color)
         self.draw_circle(x + width - radius - 1, y + height - radius - 1, radius, color)
         x = 1
-        y =22+(nb*23)
+        y =22+(nb*20)
         width = 98
-        height = 18
+        height = 19
         color = 0  # 1 for white, 0 for black
         oled.fill_rect(x, y, width, height, color)
-        oled.text(self.text, 7, (nb*23)+26)
+        oled.text(self.text, 7, (nb*20)+26)
 
         pass
     def passif(self,nb):
@@ -128,4 +128,3 @@ class menu:
         else:
             self.nb+=1
             pass
-        
